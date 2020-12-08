@@ -1,4 +1,4 @@
-# How to setup multiple CrewLink-Server instances on one server
+# How to CrewLink-Server to run as a service under systemd
 
 ## About
 
