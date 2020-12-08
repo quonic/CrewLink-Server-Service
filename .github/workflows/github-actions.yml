@@ -2,7 +2,7 @@ name: test-setup
 on: [push]
 jobs:
   run-setup:
-    runs-on: [self-hosted, linux, ARM64, Debian10]
+    runs-on: [self-hosted, linux]
     steps:
       - uses: actions/checkout@v2
       - run: cd tests; ./test-install.sh
