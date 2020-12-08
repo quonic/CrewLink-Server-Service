@@ -17,7 +17,7 @@ apt-get install -y nodejs git
 # Install yarn
 npm install yarn -g
 
-# Check that out directories exist and create them if they don't exist
+# Check that the directories exist and create them if they don't exist
 [ ! -d "$opt" ] && mkdir $opt
 [ ! -d "$base" ] && mkdir $base
 

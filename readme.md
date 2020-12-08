@@ -16,7 +16,7 @@ This will help setup a CrewLink-Server. You can also add more servers, running o
 * `cd` into `/opt/crewlink-scripts`
 * Run `./setup.sh`
 
-This will create the first CrewLink-Server instance.
+This will create the first CrewLink-Server instance running under the newly created user account crewlink. The crewlink user is a no password account that can't be logged in and doesn't have root access.
 
 ## Add another CrewLink-Server instance
 
