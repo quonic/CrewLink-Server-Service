@@ -17,7 +17,7 @@ mkdir $script
 cp ../ $script
 cd $script
 [ ! -d "./setup.sh" ] && exit 1
-./setup.sh
+sh ./setup.sh
 if [$? -eq 0]
 then
     # Setup Installed
