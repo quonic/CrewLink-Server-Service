@@ -1,12 +1,10 @@
-# How to CrewLink-Server to run as a service under systemd
-
 ## About
 
 This will help setup a CrewLink-Server. You can also add more servers, running on other ports. It will also auto update all servers installed.
 
 ## Requirements
 
-1. Debian 10 on a VM/VPS that either has a Public IP address or ports are forwarded to it
+1. Debian or Ubuntu, on a VM/VPS that either has a Public IP address or ports are forwarded to it
 
 ## CrewLink-Server service setup
 
