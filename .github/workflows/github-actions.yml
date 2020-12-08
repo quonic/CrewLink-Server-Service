@@ -1,0 +1,8 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  run-setup:
+    runs-on: [self-hosted, linux, ARM64, Debian10]
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd tests; ./test-install.sh

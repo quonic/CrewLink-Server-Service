@@ -41,3 +41,4 @@ systemctl enable crewlink-9736
 systemctl start crewlink-9736
 systemctl status crewlink-9736
 systemctl enable crewlinkupdater.timer
+exit 0
