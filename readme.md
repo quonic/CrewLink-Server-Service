@@ -10,8 +10,9 @@ This will help setup a CrewLink-Server. You can also add more servers, running o
 
 ## CrewLink-Server service setup
 
-* Create the folder `/opt/crewlink-scripts`
-* Copy all files into `/opt/crewlink-scripts`
+* Run `apt install git`
+* Create the folder `/opt/` if it doesn't exist
+* Run `https://github.com/quonic/CrewLink-Server-SystemD-Service.git /opt/crewlink-scripts`
 * `cd` into `/opt/crewlink-scripts`
 * Run `./setup.sh`
 
