@@ -1,0 +1,13 @@
+[Unit]
+Description=CrewLink Server Updater
+
+[Service]
+ExecStart=/opt/crewlink-scripts/update-crewlink.sh
+WorkingDirectory=/opt/crewlink-scripts/
+# Output to syslog
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=crewlink-updater
+
+[Install]
+WantedBy=multi-user.target
