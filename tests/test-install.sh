@@ -14,7 +14,7 @@ fi
 
 # Test that setup.sh works
 mkdir $script
-cp ../ $script
+cp -r ../ $script
 cd $script
 [ ! -d "./setup.sh" ] && exit 1
 sh ./setup.sh
@@ -82,8 +82,8 @@ systemctl daemon-reload
 systemctl reset-failed
 npm uninstall -g yarn
 apt-get -qy remove nodejs
-[ -d "$script" ] && rm -rf $script
-[ -d "$base" ] && rm -rf $base
+[ -d "$script" ] && rm -rf $script/*
+[ -d "$base" ] && rm -rf $base/*
 deluser $account
 
 if [ testsstatus -eq 1 ]
