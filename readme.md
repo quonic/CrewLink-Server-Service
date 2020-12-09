@@ -1,6 +1,6 @@
 ## About
 
-This will help setup a CrewLink-Server as a service. You can also add more services running on other ports. It will also auto update all services installed.
+This will help setup a CrewLink-Server as a service. <!--You can also add more services running on other ports.--> It will also auto update all services installed.
 
 ## Requirements
 
@@ -24,9 +24,11 @@ This will create the first CrewLink-Server instance running under a newly create
 
 * Run `curl ifconfig.me` . This might require curl to be installed.
 
+<!-- Tested and this doesn't work. I will need to have it copy the crewlink-server folder into another folder and run it from there.
 ## Add another CrewLink-Server instance
 
 Notes: This hasn't been tested, as I don't know if yarn will like running more than one instance from the same directory.
 
 * `cd /opt/crewlink-scripts`
 * Run `./add-server.sh <port>` , replacing `<port>` with a port above 1024 such as 9737 that isn't being used by another service. 9736 is used by the first CrewLink-Server instance.
+-->
