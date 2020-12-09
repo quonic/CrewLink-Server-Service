@@ -22,7 +22,7 @@ npm install yarn -g
 [ ! -d "$base" ] && mkdir $base
 [ ! -d "$script" ] && mkdir $script
 
-cp ./crewlink* $script
+cp ./* $script
 
 # Create crewlink service user
 adduser --disabled-password --gecos "" $account
