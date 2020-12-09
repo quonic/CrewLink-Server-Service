@@ -16,6 +16,7 @@ This will help setup a CrewLink-Server as a service. You can also add more servi
 * `cd` into `/opt/crewlink-scripts`
 * Run `chmod +x *.sh`
 * Run `./setup.sh`
+* Reboot to make sure that the update script will run
 
 This will create the first CrewLink-Server instance running under a newly created user account `crewlink`. The `crewlink` user is a no password / service account that can't be logged in and doesn't have root access.
 
