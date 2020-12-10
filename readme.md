@@ -1,6 +1,6 @@
 ## About
 
-This will help setup a CrewLink-Server as a service. <!--You can also add more services running on other ports.--> It will also auto update all services installed.
+This will help setup a CrewLink-Server as a service. <!--You can also add more services running on other ports.--> It will also auto update.
 
 ## Requirements
 
@@ -10,13 +10,17 @@ This will help setup a CrewLink-Server as a service. <!--You can also add more s
 
 ## CrewLink-Server service setup
 
-* Run `apt install git`
-* Create the folder `/opt/` if it doesn't exist
-* Run `https://github.com/quonic/CrewLink-Server-SystemD-Service.git /opt/crewlink-scripts`
-* `cd` into `/opt/crewlink-scripts`
-* Run `chmod +x *.sh`
-* Run `./setup.sh`
-* Reboot to make sure that the update script will run
+Login as root and run the following:
+```
+apt install git
+[ ! -d "/opt" ] && mkdir /opt
+git clone https://github.com/quonic/CrewLink-Server-SystemD-Service.git /opt/crewlink-scripts
+cd /opt/crewlink-scripts && chmod +x *.sh
+./setup.sh
+```
+Reboot to make sure that the update script will run
+
+---
 
 This will create the first CrewLink-Server instance running under a newly created user account `crewlink`. The `crewlink` user is a no password / service account that can't be logged in and doesn't have root access.
 
