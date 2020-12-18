@@ -9,20 +9,22 @@ if [ "$EUID" -ne 0 ]
 fi
 pushd $base
 journalctl -u crewlink-9736 --since=-1h | grep -Fxq "\"GET \/\d+.\d+.\d+.yml HTTP\/1.1\" 404" | tail -n 1
-if ["$(journalctl -u crewlink-9736 --since=-1h | awk '{print ($0 ~ /\"GET \/[0-9]+.[0-9]+.[0-9]+.yml HTTP\/1.1\" 404/)?1:0}' | tail -n 1)" -eq 1] || [ "$(git rev-list HEAD...origin/master --count)" -gt "0" ]; then
+if [ "$(journalctl -u crewlink-9736 --since=-1h | awk '{print ($0 ~ /\"GET \/[0-9]+.[0-9]+.[0-9]+.yml HTTP\/1.1\" 404/)?1:0}' | tail -n 1)" -eq 1 ] || [ "$(git rev-list HEAD...origin/master --count)" -gt "0" ]; then
   echo "Updating CrewLink-Server"
   service crewlink-* stop
   su -c "git fetch --all;git reset --hard origin/master" crewlink
   chown -R crewlink:crewlink $base
   service crewlink-* start
-fi
-
-if [[ "$(journalctl -u crewlink-9736 --since=-1h | tail -n 4)" =~ .*"CrewLink Server started".* ]]; then
-  echo "CrewLink Server started."
-  status=0
+  if [[ "$(journalctl -u crewlink-9736 --since=-1h | tail -n 4)" =~ .*"CrewLink Server started".* ]]; then
+    echo "CrewLink Server started."
+    status=0
+  else
+    echo "CrewLink failed to start."
+    status=1
+  fi
 else
-  echo "CrewLink failed to start."
-  status=1
+  echo "Nothing to Update."
+  status=0
 fi
 popd
 exit $status
